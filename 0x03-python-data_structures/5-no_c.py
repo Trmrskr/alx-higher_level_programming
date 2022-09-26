@@ -8,4 +8,4 @@ def no_c(my_string):
         if xter_ord == 99 or xter_ord == 67:
             my_str_list.pop(i)
         i = i + 1
-    return ''.join(str(x) for x in my_str_list)
+    return ' '.join(str(x) for x in my_str_list)
