@@ -1,4 +1,6 @@
 #include <stdlib.h>
+#include <stdio.h>
+#include "lists.h"
 
 size_t list_len(listint_t *head);
 
@@ -10,19 +12,20 @@ size_t list_len(listint_t *head);
 
 int is_palindrome(listint_t **head)
 {
+	listint_t *current = *head;
 	size_t i = 0, len = list_len(*head);
 	int palin_arr[len];
 
 	if (len == 0 ||  len == 1)
 		return (1);
 
-	while (*head != NULL)
+	while (current != NULL)
 	{
-		palin_arr[i] = *head->n;
-		*head = *head->next;
+		palin_arr[i++] = current->n;
+		current = current->next;
 	}
 	for (i = 0; i < len; i++)
-		if (palin_array[i] != palin_array[len - (i + 1)]
+		if (palin_arr[i] != palin_arr[len - (i + 1)])
 			return (0);
 	return (1);
 }
