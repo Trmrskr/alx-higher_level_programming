@@ -21,8 +21,9 @@ int is_palindrome(listint_t **head)
 
 	while (current != NULL)
 	{
-		palin_arr[i++] = current->n;
+		palin_arr[i] = current->n;
 		current = current->next;
+		++i;
 	}
 	for (i = 0; i < len; i++)
 		if (palin_arr[i] != palin_arr[len - (i + 1)])
