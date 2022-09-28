@@ -2,7 +2,6 @@
 #include <stdlib.h>
 
 listint_t *reverse_list(listint_t *);
-int palin_compare(listint_t *, listint_t *);
 
 /**
  * is_palindrome - returns if a list is palindrome or not
@@ -12,16 +11,18 @@ int palin_compare(listint_t *, listint_t *);
 
 int is_palindrome(listint_t **head)
 {
-	int palin_res = 0;
 	listint_t *cur_list = *head;
 	listint_t *rev_list = NULL;
-
 	rev_list = reverse_list(cur_list);
-	palin_res = palin_compare(cur_list, rev_list);
 
-	if (palin_res)
-		return (1);
-	return (0);
+	while (cur_list != NULL && rev_list != NULL)
+	{
+		if (cur_list->n != rev_list->n)
+			return (0);
+		cur_list = cur_list->next;
+		rev_list = rev_list->next;
+	}
+	return (1);
 }
 
 /**
@@ -59,29 +60,6 @@ listint_t *reverse_list(listint_t *head)
 		cur_node->next = new_list;
 		new_list = cur_node;
 	}
-
+	
 	return (new_list);
 }
-
-/**
- * palin_compare - compares two list
- * @list1: first list
- * @list2: second list
- * Return: 1 if equal, 0 otherwise
- */
-
-int palin_compare(listint_t *list1, listint_t *list2)
-{
-	while (list1 != NULL && list2 != NULL)
-	{
-		if (list1->n != list2->n)
-			return (0);
-		list1 = list1->next;
-		list2 = list2->next;
-	}
-	return (1);
-}
-
-
-
-
