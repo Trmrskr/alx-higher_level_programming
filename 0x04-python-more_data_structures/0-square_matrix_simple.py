@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 # simply return [[x**2 for x in row] for row in matrix]
+# or simplly return [list(map(lambda x: x**2, row)) for row in matrix]
 
 def square_matrix_simple(matrix=[]):
     new_matrix = []
