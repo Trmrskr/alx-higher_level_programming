@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+    The roman_to_int function converts from roman numerals to int
+"""
+
 
 def get_int_value(xter):
     roman_values = {
