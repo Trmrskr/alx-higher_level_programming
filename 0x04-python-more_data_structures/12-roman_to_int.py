@@ -15,6 +15,7 @@ def get_int_value(xter):
             return value
     return 0
 
+
 def roman_to_int(roman_string):
     num_pie = 0
     next_xter_value = 0
@@ -35,7 +36,7 @@ def roman_to_int(roman_string):
             next_xter_value = get_int_value(roman_string[ni])
         else:
             next_xter_value = 0
-        
+
         if (cur_xter_value < next_xter_value):
             prev_xter_value = cur_xter_value
         else:
