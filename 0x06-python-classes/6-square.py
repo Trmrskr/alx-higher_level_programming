@@ -61,7 +61,7 @@ class Square:
     @position.setter
     def position(self, position):
         """This method sets the position of the position private
-        instance variable
+        instance variables
         """
 
         if (type(position) is not tuple or len(position) is not 2 or
