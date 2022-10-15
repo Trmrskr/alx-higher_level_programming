@@ -47,7 +47,7 @@ class Square:
     def __lt__(self, other):
         """The rich comparison operator: less than
         (Python documentation-> Data Models->Special method names)
-            
+
             Args:
                 other: the other square to compare against
 
@@ -59,7 +59,7 @@ class Square:
     def __le__(self, other):
         """The rich comparison operator: less than or equal to
         (Python documentation-> Data Models->Special method names)
-            
+
             Args:
                 other: the other square to compare against
 
@@ -67,11 +67,11 @@ class Square:
                 True or false
         """
         return self.size <= other.size
-    
+
     def __eq__(self, other):
         """The rich comparison operator: equal to
         (Python documentation-> Data Models->Special method names)
-            
+
             Args:
                 other: the other square to compare against
 
@@ -83,7 +83,7 @@ class Square:
     def __ne__(self, other):
         """The rich comparison operator: not equal to
         (Python documentation-> Data Models-> Special method names)
-            
+
             Args:
                 other: the other square to compare against
 
@@ -95,7 +95,7 @@ class Square:
     def __gt__(self, other):
         """The rich comparison operator: greater than
         (Python documentation-> Data Models-> Special method names)
-            
+
             Args:
                 other: the other square to compare against
 
@@ -107,7 +107,7 @@ class Square:
     def __ge__(self, other):
         """The rich comparison operator: greater than or equal to
         (Python documentation-> Data Models-> Special method names)
-            
+
             Args:
                 other: the other square to compare against
 
