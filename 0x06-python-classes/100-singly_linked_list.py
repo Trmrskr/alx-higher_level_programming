@@ -13,8 +13,15 @@ class Node:
 
     def __init__(self, data, next_node=None):
         """The constructor method of the sll"""
-        self.__data = data
-        self.__next_node = next_node
+        if type(data) is int:
+            self.__data = data
+        else:
+            raise TypeError("data must be an integer")
+
+        if type(next_node) is Node or next_node is None:
+            self.__next_node = next_node
+        else:
+            return TypeError("next_node must be a Node object")
 
     @property
     def data(self):
