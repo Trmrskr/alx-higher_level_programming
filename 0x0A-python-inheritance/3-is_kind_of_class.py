@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""This module contains the is_same_class function"""
+"""This module contains the is_kind_of_class function"""
 
 
 def is_same_class(obj, a_class):
-    """The function checks if obj is an exact instance of a_class
+    """The function checks if obj is an instance of a_class
 
     Argument:
         obj: the object to be checked
@@ -11,7 +11,7 @@ def is_same_class(obj, a_class):
 
     Return: True if obj is an instance of class otherwise false
     """
-    if type(obj) is a_class:
+    if isinstance(obj, a_class):
         return True
     else:
         return False
