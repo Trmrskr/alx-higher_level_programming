@@ -2,7 +2,7 @@
 """This module contains the is_kind_of_class function"""
 
 
-def is_same_class(obj, a_class):
+def is_kind_of_class(obj, a_class):
     """The function checks if obj is an instance of a_class
 
     Argument:
