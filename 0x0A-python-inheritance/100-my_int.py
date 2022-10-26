@@ -4,7 +4,7 @@
 
 class MyInt(int):
     """The MyInt class
- 
+
     Attribute:
         __eq__: equal special method
         __ne__: not equal to special method
