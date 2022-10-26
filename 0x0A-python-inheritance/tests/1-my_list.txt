@@ -15,12 +15,12 @@ Check for method docstring:
 	>>> len(meth) > 1
 	True
 
+Importing ``MyList()`` class from its module
+	>>> MyList = __import__("1-my_list").MyList
+
 Checking that MyList inherits from list:
 	>>> issubclass(MyList, list)
 	True
-
-Importing ``MyList()`` class from its module
-	>>> MyList = __import__("1-my_list").MyList
 
 Instantiating an instance of ``MyList``:
 	>>> l = MyList()
@@ -43,6 +43,7 @@ Print Sorted ``MyList``:
 	[1, 2, 3, 4, 5]
 
 Reinitialize an instance of ``MyList``:
+	>>> l = MyList()
 	>>> l.append(5)
 	>>> l.append(4)
 	>>> l.append(2)
@@ -57,5 +58,5 @@ Too many arguments to print_sorted():
 	>>> l.print_sorted(l)
 	Traceback (most recent call last):
 	...
-	TypeError: print_sorted() takes 0 positional arguments but 1 was given
+	TypeError: print_sorted() takes 1 positional argument but 2 were given
 
