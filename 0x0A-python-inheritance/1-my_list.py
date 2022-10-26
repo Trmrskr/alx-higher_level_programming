@@ -12,6 +12,6 @@ class MyList(list):
         """ The constructor method of the MyList class """
         super().__init__()
 
-    def print_sorted():
+    def print_sorted(self):
         """ A function that prints self in sorted order """
         print(sorted(self))

@@ -19,9 +19,12 @@ Checking that MyList inherits from list:
 	>>> issubclass(MyList, list)
 	True
 
+Importing ``MyList()`` class from its module
+	>>> MyList = __import__("1-my_list").MyList
+
 Instantiating an instance of ``MyList``:
 	>>> l = MyList()
-	
+
 Checking for empty list:
 	>>> l.print_sorted()
 	[]
@@ -39,16 +42,20 @@ Print Sorted ``MyList``:
 	>>> print(sorted(l))
 	[1, 2, 3, 4, 5]
 
-Reverse Sorted ``MyList``:
-	>>> print(reversed(l))
-	[5, 4, 3, 2, 1]
+Reinitialize an instance of ``MyList``:
+	>>> l.append(5)
+	>>> l.append(4)
+	>>> l.append(2)
+	>>> l.append(1)
+	>>> l.append(3)
 
 Print Sorted ``MyList`` using print_sorted:
 	>>> l.print_sorted()
 	[1, 2, 3, 4, 5]
 
 Too many arguments to print_sorted():
-	>>> l.print_sorted()
+	>>> l.print_sorted(l)
 	Traceback (most recent call last):
 	...
-	TypeError: print_sorted() takes 1 positional argument but 2 were given
+	TypeError: print_sorted() takes 0 positional arguments but 1 was given
+
