@@ -2,6 +2,7 @@
 """ A function that converts Json string to object"""
 import json
 
+
 def from_json_string(my_str):
     """ function from_json_string
         Argument:
