@@ -4,7 +4,7 @@
 
 def class_to_json(obj):
     """function returns the obj dictionary of obj
-    
+
     Argument:
         obj: the object whose dictionary description is to be returned
 
