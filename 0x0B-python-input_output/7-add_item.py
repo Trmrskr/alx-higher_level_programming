@@ -15,9 +15,10 @@ if filename not in os.listdir(os.getcwd()):
         working directory do the following
     """
     my_list = []
-    save_to_json_file(my_list, "add_item.json")
 else:
     my_list = load_from_json_file("add_item.json")
-    for arg in sys.argv[1:]:
-        my_list.append(arg)
-    save_to_json_file(my_list, "add_item.json")
+
+""" empty or no empty list, add sys.argv to file """
+for arg in sys.argv[1:]:
+    my_list.append(arg)
+save_to_json_file(my_list, "add_item.json")
