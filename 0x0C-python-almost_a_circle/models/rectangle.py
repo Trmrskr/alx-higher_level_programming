@@ -1,15 +1,19 @@
 #!/usr/bin/python3
 """
-    contains class Rectangle which implements Base.
+    This module contains the class Rectangle which inherits from the Base class.
 """
 from models.base import Base
 
 
 class Rectangle(Base):
     """
-        class Rectangle implements Base.
-        Methods:
-            __init__()
+        The Rectangle class which inherits from Base.
+
+        Attributes:
+            __width (int): holds the width of the rectangle
+            __height (int): holds the height of the rectangle
+            __x (int): holds the x coordinate of the rectangle
+            __y (int): holds the y coordinate of the rectangle
     """
     def __init__(self, width, height, x=0, y=0, id=None):
         """
@@ -24,15 +28,15 @@ class Rectangle(Base):
     @property
     def width(self):
         """
-            getter function for __width
-            Returns: width
+            The getter function of the __width
+            Returns: __width
         """
         return self.__width
 
     @width.setter
     def width(self, value):
         """
-            setter function for width.
+            The setter function instance of Rectangele width.
             Args:
                 value (int): value to be set.
         """
@@ -46,7 +50,7 @@ class Rectangle(Base):
     @property
     def height(self):
         """
-            getter function for height
+            getter function for instance of Rectangle height
             Returns: height
         """
         return self.__height
@@ -54,7 +58,7 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """
-            setter function for height
+            setter function for instance Rectangle height
             Args:
                 value (int): value to be set.
         """
@@ -68,7 +72,7 @@ class Rectangle(Base):
     @property
     def x(self):
         """
-            getter function for x.
+            getter function for x coordinate of Rectangle instance.
             Returns: x
         """
         return self.__x
@@ -76,7 +80,7 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """
-            setter function for x.
+            setter function for x coordinate of Rectangle instance.
             Args:
                 value (int): value to be set.
         """
@@ -90,7 +94,7 @@ class Rectangle(Base):
     @property
     def y(self):
         """
-            getter function for y
+            getter function for y coordinate of Rectangle instance.
             Returns: y
         """
         return self.__y
@@ -98,7 +102,7 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """
-            setter function for y
+            setter function for y coordinate of Rectangle instance
             Args:
                 value (int): value to be set.
         """
@@ -111,32 +115,25 @@ class Rectangle(Base):
 
     def area(self):
         """
-            returns the area of the Rectangle instance.
+            Calculates and returns the area of the Rectangle instance.
         """
         return (self.__width * self.__height)
 
     def display(self):
         """
-            prints to stdout the Rectangle instance with '#'
+            Prints the rectangle instance using the # symbol
         """
-        rectangle = ""
         print_symbol = "#"
 
-#        for i in range(self.__height - 1):
-#            rectangle += print_symbol * self.__width + "\n"
-#        rectangle += print_symbol * self.__width
-
-#        print("{}".format(rectangle))
-
-        print("\n" * self.y, end="")
-
-        for i in range(self.height):
-            rectangle += (" " * self.x) + (print_symbol*self.width) + "\n"
-        print(rectangle, end="")
+        for off in range(self.__y):
+            print()
+        for points in range(self.__height):
+            print(" " * self.__x, end=" ")
+            print(print_symbol * self.__width)
 
     def __str__(self):
         """
-            returns a string formart of the rectangle
+            returns a informal string representation of the rectangle instance
         """
         return "[{}] ({}) {}/{} - {}/{}".format(type(self).__name__, self.id,
                                                 self.__x, self.__y,
@@ -144,10 +141,10 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """
-            assigns key/value argument to attributes
-            kwargs is skipped if args is not empty
+            This function updates the Rectangle class by assigning an argument
+            to each attribute.
             Args:
-                *args -  variable number of no-keyword args
+                *args -  variable number of non-keyworded args
                 **kwargs - variable number of keyworded args
         """
         if len(args) == 0:
@@ -166,7 +163,7 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """
-            returns the dictionary repr of a rect
+            returns the dictionary of a rectangle instance
         """
         return {'x': getattr(self, "x"), 'y': getattr(self, "y"),
                 'id': getattr(self, "id"), 'height': getattr(self, "height"),

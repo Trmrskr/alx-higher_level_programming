@@ -1,27 +1,27 @@
 #!/usr/bin/python3
 # base.py
-"""Defines a base model class."""
+"""This module contains the base model class."""
 import json
 import csv
-import turtle
+## import turtle
 
 
 class Base:
-    """Represent the base model.
+    """
+        The base model class
 
-    Represents the "base" for all other classes in project 0x0C*.
-
-    Attributes:
-        __nb_objects (int): The number of instantiated Bases.
+         Attributes:
+            __nb_objects (int): A private class attribute of Base class.
     """
 
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """Initialize a new Base.
+        """
+            The constructor of the Base class.
 
-        Args:
-            id (int): The identity of the new Base.
+            Args:
+                id (int): The new id of a Base object.
         """
         if id is not None:
             self.id = id
