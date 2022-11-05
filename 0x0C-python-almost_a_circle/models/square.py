@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-    contains class Square implements class Rectangle
+    This module contain class Square which inherits from the
+    class Rectangle
 """
 from models.rectangle import Rectangle
 
@@ -18,14 +19,20 @@ class Square(Rectangle):
     @property
     def size(self):
         """
-            returns the size of the square
+            The getter method of the size instance attribute
+
+            Returns:
+                returns the size of the square
         """
         return self.width
 
     @size.setter
     def size(self, value):
         """
-            sets the value of size
+            The setter method of the size instance method
+
+            Arguments:
+                value: the value to set to the width and height attribute
         """
         if type(value) != int:
             raise TypeError("width must be an integer")
@@ -37,8 +44,10 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
         """
-            assigns key/value argument to attributes
-            kwargs is skipped if args is not empty
+            The function updates the attributes of the Square instance using
+            the args and kwargs variable arguments.
+            kwargs is skipped if args is not empty.
+
             Args:
                 *args -  variable number of no-keyword args
                 **kwargs - variable number of keyworded args
@@ -58,7 +67,7 @@ class Square(Rectangle):
 
     def __str__(self):
         """
-            Overloading str function
+            Overloading __str__ function
         """
         return "[{}] ({}) {}/{} - {}".format(type(self).__name__,
                                              self.id, self.x, self.y,
@@ -66,7 +75,8 @@ class Square(Rectangle):
 
     def to_dictionary(self):
         """
-            Returns the dictionary representation of a Square
+            This function returns the dictionary representation of a 
+            Square instance
         """
         return {'id': getattr(self, "id"),
                 'size': getattr(self, "width"),
