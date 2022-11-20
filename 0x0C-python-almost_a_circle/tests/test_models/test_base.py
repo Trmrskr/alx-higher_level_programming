@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # test_base.py
-"""Defines unittests for base.py.
+"""This module contains the unittests for all custom methods of the base.py.
 
 Unittest classes:
     TestBase_instantiation - line 23

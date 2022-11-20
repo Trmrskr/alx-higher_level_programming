@@ -52,18 +52,24 @@ class Square(Rectangle):
                 *args -  variable number of no-keyword args
                 **kwargs - variable number of keyworded args
         """
-        if len(args) == 0:
-            for key, val in kwargs.items():
-                self.__setattr__(key, val)
-            return
 
-        try:
-            self.id = args[0]
-            self.size = args[1]
-            self.x = args[2]
-            self.y = args[3]
-        except IndexError:
-            pass
+        if args and len(args) != 0:
+            for arg_i in range(len(args)):
+                if arg_i == 0:
+                    self.id = args[arg_i]
+                elif arg_i == 1:
+                    self.size = args[arg_i]
+                elif arg_i == 2:
+                    self.x = args[arg_i]
+                else:
+                    self.y = args[arg_i]
+        elif kwargs and len(kwargs) != 0:
+            for key, val in kwargs.items():
+                if key == "id":
+                    if val is None:
+                        self.__init__(self.size, self.x, self.y)
+                else:
+                    self.__setattr__(key, val)
 
     def __str__(self):
         """
