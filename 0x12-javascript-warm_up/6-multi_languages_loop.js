@@ -2,6 +2,6 @@
 
 const arrayString = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
 
-for (str of arrayString) {
-	console.log(str);
+for (const str of arrayString) {
+  console.log(str);
 }
