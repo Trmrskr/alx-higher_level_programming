@@ -2,14 +2,14 @@
 
 const dictionary = require('./101-data').dict;
 
-let new_dict = {};
+const newDict = {};
 
 for (const key in dictionary) {
-  if (new_dict[dictionary[key]] != undefined) {
-    new_dict[dictionary[key]].push(key);
+  if (newDict[dictionary[key]] !== undefined) {
+    newDict[dictionary[key]].push(key);
   } else {
-    new_dict[dictionary[key]] = [key];
+    newDict[dictionary[key]] = [key];
   }
 }
 
-console.log(new_dict);
+console.log(newDict);
