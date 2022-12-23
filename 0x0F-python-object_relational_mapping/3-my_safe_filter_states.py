@@ -18,25 +18,15 @@ if __name__ == '__main__':
     from the database.
     """
 
-    db = MySQLdb.connect(host="localhost", user=argv[1], port=3306,
+    conn = MySQLdb.connect(host="localhost", user=argv[1], port=3306,
                          passwd=argv[2], db=argv[3])
+    cur = conn.cursor()
 
-    with db.cursor() as cur:
-        cur.execute("""
-            SELECT
-                *
-            FROM
-                states
-            WHERE
-                name LIKE BINARY %(name)s
-            ORDER BY
-                states.id ASC
-        """, {
-            'name': argv[4]
-        })
+    cur.execute("SELECT * FROM states WHERE name LIKE %s ORDER BY id ASC", (argv[4],))
+    query_rows = cur.fetchall()
 
-        rows = cur.fetchall()
+    for rows in query_rows:
+        print(row);
 
-    if rows is not None:
-        for row in rows:
-            print(row)
+    cur.close()
+    conn.close()
