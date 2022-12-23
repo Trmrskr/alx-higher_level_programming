@@ -27,8 +27,9 @@ if __name__ == '__main__':
                 {'name': argv[4]})
     query_rows = cur.fetchall()
 
-    for rows in query_rows:
-        print(row)
+    if query_rows is not None:
+        for rows in query_rows:
+            print(row)
 
     cur.close()
     conn.close()
