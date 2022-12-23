@@ -22,7 +22,7 @@ if __name__ == '__main__':
                          passwd=argv[2], db=argv[3])
     cur = conn.cursor()
 
-    cur.execute("SELECT * FROM states WHERE name LIKE %s ORDER BY id ASC", (argv[4],))
+    cur.execute("SELECT * FROM states WHERE name LIKE BINARY %s ORDER BY states.id ASC", {'name': argv[4]})
     query_rows = cur.fetchall()
 
     for rows in query_rows:
