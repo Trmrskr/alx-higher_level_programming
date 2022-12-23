@@ -21,8 +21,8 @@ if __name__ == '__main__':
 
     cur = conn.cursor()
     cur.execute("SELECT * FROM states \
-                 WHERE name = '{}' \
-                 ORDER BY states.id ASC".format(argv[4]))
+                WHERE name LIKE '{:s}' \
+                ORDER BY states.id ASC".format(argv[4]))
     query_rows = cur.fetchall()
 
     for rows in query_rows:
