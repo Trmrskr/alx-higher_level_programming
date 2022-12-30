@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """
 This script lists all State objects
-from the database `hbtn_0e_6_usa`.
+from the database `hbtn_0e_6_usa`
+using sqlalchemy ORM.
 """
 
 from sys import argv
@@ -11,7 +12,8 @@ from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
     """
-    Access to the database and get the states
+    The namespace of the this script. 
+    Connect to the database engine, establish a session
     from the database.
     """
 
