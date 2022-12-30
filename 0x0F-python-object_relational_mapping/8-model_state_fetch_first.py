@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 This script prints the first State object
-from the database `hbtn_0e_6_usa`.
+from the database `hbtn_0e_6_usa` using sqlalchemy.
 """
 
 from sys import argv
@@ -11,8 +11,8 @@ from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
     """
-    Access to the database and get a state
-    from the database.
+    connect to database engine using uri, establish a session
+    print firs t row from database.
     """
 
     db_uri = 'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
