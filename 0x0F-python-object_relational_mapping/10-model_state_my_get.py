@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 """
-This script prints the State object id
-with the name passed as argument
-from the database `hbtn_0e_6_usa`.
+The script prints the id of the state name passed as argument to the script
+from the database `hbtn_0e_6_usa` using sqlalchemy ORM.
 """
 
 from sys import argv
@@ -12,8 +11,8 @@ from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
     """
-    Access to the database and get a state
-    from the database.
+    Connect to the database, create a session and query the database.
+    print the id of the first result obtained
     """
 
     db_uri = 'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
