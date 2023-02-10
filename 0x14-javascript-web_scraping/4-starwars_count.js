@@ -17,8 +17,7 @@ request(url, (error, response, body) => {
       }
     }
     console.log(count);
-  }
-  else {
+  } else {
     console.log('An error occured. Status code: ' + response.statusCode);
   }
 });
