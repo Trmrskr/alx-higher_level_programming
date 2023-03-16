@@ -1,7 +1,10 @@
 #!/usr/bin/node
+/* Print `Not a number` or a number */
 
-if (isNaN(process.argv[2])) {
+const value = process.argv[2];
+
+if (isNaN(value)) {
   console.log('Not a number');
 } else {
-  console.log('My number:', process.argv[2]);
+  console.log('My number:', value);
 }

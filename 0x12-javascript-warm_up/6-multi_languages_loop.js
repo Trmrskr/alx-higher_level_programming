@@ -1,7 +1,9 @@
 #!/usr/bin/node
 
-const arrayString = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
+const languages = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
 
-for (const str of arrayString) {
-  console.log(str);
+/* languages.map(language => console.log(language)); */
+
+for (const language of languages) {
+  console.log(language);
 }
