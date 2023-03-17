@@ -18,7 +18,7 @@ if __name__ == '__main__':
 
     cur = conn.cursor()
     cur.execute("SELECT * FROM states \
-                 WHERE ORD(states.name) = 78 \
+                 WHERE LEFT(states.name, 1)= 'N' \
                  ORDER BY states.id ASC")
     rows = cur.fetchall()
 
