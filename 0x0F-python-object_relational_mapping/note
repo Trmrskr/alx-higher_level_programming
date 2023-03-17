@@ -1,0 +1,51 @@
+Steps by step command to install mysql on Ubuntu 20.04
+
+sudo apt update
+
+sudo apt upgrade (optional)
+
+sudo apt install mysql-server
+
+Configuring MySQL
+
+sudo mysql (To open mysql to run command)
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password'
+
+Replace localhost by the name of the host system.
+
+Replace password with your password of choice.
+
+To configure MySQL security, run:
+
+sudo mysql_secure_installation.
+
+Follow the instructions to set according to your need.
+
+Following that, run mysql using 'sudo mysql'.
+
+Create a new user, using the following command.
+
+CREATE USER 'username'@'localhost' IDENTIFIED WITH 'mysql_native_password' BY 'password';
+
+However you can use any of inbuilt mysql authentication feature listed below:
+
+- mysql_native_password
+- auth_socket
+- authentication_plugin
+- caching_sha2_password (default)
+
+
+Grant user priviledge with the command.
+
+The general syntax for granting priviledge is:
+GRANT PRIVILEDGE ON database.table TO 'username'@'host';
+
+However, you can specify the priviledges:
+GRANT CREATE, ALTER, DROP, INSERT, UPDATE, INDEX, DELETE, SELECT, REFERENCES, RELOAD ON *.* TO 'username'@'localhost' WITH GRANT OPTION;
+
+Well, you can also grant all priviledge to user:
+GRANT ALL PRIVILEDGES ON *.* TO 'username'@'localhost' WITH GRANT OPTION;
+
+At the end of it, flush priviledges by running:
+FLUSH PRIVILEDGES;
