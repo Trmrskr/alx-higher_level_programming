@@ -21,12 +21,12 @@ if __name__ == '__main__':
 
     cur = conn.cursor()
     cur.execute("SELECT * FROM states \
-                WHERE name LIKE BINARY '{}' \
+                WHERE name = '{}' \
                 ORDER BY states.id ASC".format(argv[4]))
     query_rows = cur.fetchall()
 
-    for rows in query_rows:
-        print(rows)
+    for row in query_rows:
+        print(row)
 
     cur.close()
     conn.close()
