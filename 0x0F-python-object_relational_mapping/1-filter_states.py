@@ -18,7 +18,7 @@ if __name__ == '__main__':
 
     cur = conn.cursor()
     cur.execute("SELECT * FROM states \
-                 WHERE states.name LIKE /^N\w*$/ \
+                 WHERE states.name LIKE '^N\w*$' \
                  ORDER BY states.id ASC")
     rows = cur.fetchall()
 
