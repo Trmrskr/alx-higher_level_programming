@@ -22,7 +22,7 @@ if __name__ == '__main__':
                 cities.id, cities.name, states.name
             FROM
                 cities
-            JOIN
+            INNER JOIN
                 states
             ON
                 cities.state_id = states.id
