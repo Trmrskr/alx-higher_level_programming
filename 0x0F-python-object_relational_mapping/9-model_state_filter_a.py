@@ -22,5 +22,7 @@ if __name__ == "__main__":
 
     session = Session()
 
-    for instance in session.query(State).filter(State.name.contains('a')):
-        print('{0}: {1}'.format(instance.id, instance.name))
+    states = session.query(State).filter(State.name.contains('a'))
+
+    for state in states:
+        print('{}: {}'.format(state.id, state.name))
