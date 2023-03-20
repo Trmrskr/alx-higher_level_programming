@@ -21,9 +21,9 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
 
     session = Session()
-    instance = session.query(State).filter(State.name == argv[4]).first()
+    result = session.query(State).filter(State.name == argv[4]).first()
 
-    if instance is None:
+    if result is None:
         print('Not found')
     else:
-        print('{0}'.format(instance.id))
+        print('{0}'.format(result.id))
