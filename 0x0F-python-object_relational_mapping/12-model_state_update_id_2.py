@@ -21,7 +21,7 @@ if __name__ == "__main__":
 
     session = Session()
 
-    ari_state = session.query(State).filter(State.id == '2').first()
-    ari_state.name = 'New Mexico'
+    upd_state = session.query(State).filter(State.id == '2').first()
+    upd_state.name = 'New Mexico'
     session.commit()
     session.close()

@@ -22,8 +22,8 @@ if __name__ == "__main__":
 
     session = Session()
 
-    lou_state = State(name='Louisiana')
-    session.add(lou_state)
+    new_state = State(name='Louisiana')
+    session.add(new_state)
     session.commit()
-    print('{0}'.format(lou_state.id))
+    print('{0}'.format(new_state.id))
     session.close()
