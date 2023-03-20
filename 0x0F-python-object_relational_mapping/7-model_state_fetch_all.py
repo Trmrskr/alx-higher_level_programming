@@ -12,7 +12,7 @@ from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
     """
-    The namespace of the this script. 
+    The namespace of the this script.
     Connect to the database engine, establish a session
     from the database.
     """
