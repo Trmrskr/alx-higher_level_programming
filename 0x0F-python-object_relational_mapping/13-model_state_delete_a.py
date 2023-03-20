@@ -22,8 +22,10 @@ if __name__ == "__main__":
 
     session = Session()
 
-    for instance in session.query(State).filter(State.name.contains('a')):
-        session.delete(instance)
+    del_states = session.query(State).filter(State.name.contains('a'))
+
+    for state in del_states:
+        session.delete(state)
 
     session.commit()
     session.close()
