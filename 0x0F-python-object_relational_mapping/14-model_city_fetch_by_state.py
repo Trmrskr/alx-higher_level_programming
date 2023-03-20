@@ -23,7 +23,7 @@ if __name__ == "__main__":
 
     session = Session()
 
-    query = session.query(City).join(State).all()
+    query = session.query(City, State).join(State).all()
 
     for _c, _s in query:
         print("{}: ({:d}) {}".format(_s.name, _c.id, _c.name))
