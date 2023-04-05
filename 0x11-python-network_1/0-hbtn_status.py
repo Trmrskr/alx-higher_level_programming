@@ -5,9 +5,9 @@ fetches https://alx-intranet.hbtn.io/status and prints the body formated
 
 if __name__ == "__main__":
     import urllib.request as request
-    with request.urlopen('https://alx-intranet.hbtn.io/status') as r:
-        html = r.read()
+    with request.urlopen('https://alx-intranet.hbtn.io/status') as response:
+        output = response.read()
         print('Body response:')
-        print('\t- type: {}'.format(type(html)))
-        print('\t- content: {}'.format(html))
-        print('\t- utf8 content: {}'.format(html.decode('utf-8')))
+        print('\t- type: {}'.format(type(output)))
+        print('\t- content: {}'.format(output))
+        print('\t- utf8 content: {}'.format(output.decode('utf-8')))
