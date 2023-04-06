@@ -10,7 +10,6 @@ if __name__ == '__main__':
     url = 'https://api.github.com/user'
     response = requests.get(url, auth=(argv[1], argv[2]))
     try:
-        res = response.json()
-        print(res['id'])
+        print(response.json().get('id'))
     except ValueError:
         print("Not a valid JSON")
