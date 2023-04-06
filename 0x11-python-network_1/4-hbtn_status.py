@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """
 A script that takes in a URL, sends a request to the URL and displays
-the value of the variable X-Request-Id in the response header
+ - the type of the response
+ - the content of the response
 """
 
 if __name__ == '__main__':
