@@ -1,40 +1,51 @@
 #!/usr/bin/python3
-"""
-Script reads stdin line by line and computes metrics
-"""
+
+""" script that reads stdin line by line and computes metrics """
 
 import sys
 
 
-def printStatus(statusCode, size):
-    """print status information"""
-    print("File size: {}".format(size))
-    for key in sorted(statusCode.keys()):
-        if statusCode[key] != 0:
-            print("{} {}".format(key, statusCode[key]))
+def print_status(dic, size):
+    """ Prints information """
+    print("File size: {:d}".format(size))
+    for i in sorted(dic.keys()):
+        if dic[i] != 0:
+            print("{}: {:d}".format(i, dic[i]))
 
 
-statusCode = {200: 0, 301: 0, 400: 0, 401: 0, 403: 0, 404: 0, 405: 0, 500: 0}
-count = 0
-total_file_size = 0
+def log_stat():
+    # sourcery skip: use-contextlib-suppress
+    status_codes = {"200": 0, "301": 0, "400": 0, "401": 0, "403": 0,
+                    "404": 0, "405": 0, "500": 0}
 
-try:
-    data = sys.stdin.read()
-    lines = data.rstrip().split("\n")
+    count = 0
+    size = 0
 
-    for line in lines:
-        count += 1
+    try:
+        for line in sys.stdin:
+            if count != 0 and count % 10 == 0:
+                print_status(status_codes, size)
 
-        if count != 0 and count % 10 == 0:
-            printStatus(statusCode, total_file_size)
+            words = line.split()
+            count += 1
 
-        words = line.split(" ")
-        total_file_size += int(words[-1])
-        code = int(words[-2])
-        if code in statusCode:
-            statusCode[code] += 1
+            try:
+                size += int(words[-1])
+            except Exception:
+                pass
 
-    printStatus(statusCode, total_file_size)
-except KeyboardInterrupt:
-    printStatus(statusCode, total_file_size)
-    raise
+            try:
+                if words[-2] in status_codes:
+                    status_codes[words[-2]] += 1
+            except Exception:
+                pass
+        print_status(status_codes, size)
+
+    except KeyboardInterrupt:
+        print_status(status_codes, size)
+        raise
+
+
+if __name__ == "__main__":
+    """main namespace"""
+    log_stat()
