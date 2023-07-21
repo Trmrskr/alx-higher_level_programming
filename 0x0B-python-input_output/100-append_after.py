@@ -3,6 +3,7 @@
 This module contains the append after function
 """
 
+
 def append_after(file_name, search_text, text_append):
     """The append namspace"""
 
@@ -15,4 +16,3 @@ def append_after(file_name, search_text, text_append):
 
     with open(file_name, "w", encoding="utf-8") as fil:
         n = fil.write(new_data)
-        print(n)
